@@ -1,0 +1,131 @@
+@use 'base';
+
+/*menyknapp för att öppna menyn*/
+
+#open-menu {
+    margin-left: auto;
+}
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border: solid black 2px;
+    cursor: pointer;
+    margin-right: 5%;
+}
+
+.menu-btn .menu-text {
+    display: inline-block;
+    @include base.h2-styles;
+}
+
+.menu-btn:hover {
+    box-shadow: 0 0px 5px black;
+}
+
+.menu-icon {
+    margin-right: 10Px;
+}
+
+.bars {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+}
+
+/*menyknapp för stäng*/
+.close {
+    padding: 10px 15px;
+}
+
+/*roterar två streck till ett kryss*/
+.cross1 {
+    width: 25px;
+    transform: rotate(45deg);
+    position: relative;
+    top: 5px;
+}
+
+.cross2 {
+    width: 25px;
+    transform: rotate(135deg);
+    position: relative;
+    top: -3px;
+}
+
+
+// VANLIGA KNAPPAR
+
+.aniBtn {
+    width: 50%;
+    margin: 2em auto 0.5em;
+    padding: 1em 2em;
+    display: block;
+    border: 0;
+    font-size: 1.5em;
+    background: linear-gradient(90deg, var(--color-1), var(--color-2));
+    color: white;
+    transition: --color-1 2s, --color-2 1s;
+    text-align: center;
+}
+
+.aniBtn:hover {
+    --color-2: rgb(0, 255, 34);
+    --color-1: rgb(248, 22, 147);
+    cursor: pointer;
+}
+
+.aniBtn2 {
+    margin: 1em auto 0;
+    padding: 1em 2em;
+    display: block;
+    border: 0;
+    font-size: 1.5em;
+    background-color: aquamarine;
+    color: black;
+    border-radius: 7%;
+}
+
+.aniBtn2:hover {
+    animation: rotateYExample 2s infinite alternate linear;
+
+}
+
+//FORMULÄR
+
+form {
+    @include base.center-element;
+}
+
+.formRubrik {
+    @include base.h2-styles;
+}
+
+input[type=text] {
+    border-radius: 10%;
+    border: 2px solid black;
+}
+
+#submit-button {
+    border-radius: 10%;
+    border: 2px solid black;
+    @include base.h2-styles;
+    padding: 0em 2em;
+    background-color: #007bff;
+}
+
+#myForm.success #submit-button {
+    animation: successAnimation 0.5s ease-in-out forwards;
+}
+
+#myForm.success {
+    animation: disappearAnimation 4s ease-in-out forwards;
+}
+
+// DIAGRAM
+.canvascontainer {
+    width: 50%;
+}
