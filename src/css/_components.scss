@@ -126,9 +126,34 @@ input[type=text] {
 
 // DIAGRAM
 
+.diagram-icon {
+    height: 2em;
+    color: white;
+    width: 2em;
+}
 
+.canvascontainer {
+    margin: 2em 0;
+}
+
+#barChart {
+    height: 100%;
+    width: 100%;
+}
+
+#doughnutChart {
+    height: 100%;
+    width: 100%;
+}
 
 // KARTA
+
+.map-icon {
+    height: 2em;
+    color: white;
+    width: 2em;
+    display: inline-block;
+}
 
 #map {
     height: 500px;
@@ -138,6 +163,8 @@ input[type=text] {
 #mapFrame {
     height: 100%;
     width: 100%;
+    border-radius: 10%;
+    box-shadow: 14px -10px 20px 0px black;
 }
 
 #search-input {

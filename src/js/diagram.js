@@ -25,10 +25,13 @@ async function init() {
         const topSixKurser = sortedKurser.slice(0, 6);
         const topSixProgram = sortedProgram.slice(0, 5);
 
+        const largeScreenLabels = topSixKurser.map(kurs => kurs.name);
+        const smallScreenLabels = ['Beteende', 'Grund Psykologi', 'Kriminologi', 'Krim Psykologi', 'Juridik', 'Psykologi Intro'];
+
         new Chart(barchartEl, {
             type: 'bar',
             data: {
-                labels: topSixKurser.map(kurs => kurs.name),
+                labels: (window.innerWidth > 800) ? largeScreenLabels : smallScreenLabels,
                 datasets: [{
                     label: ' Number of Applicants',
                     data: topSixKurser.map(kurs => kurs.applicantsTotal),
@@ -37,6 +40,9 @@ async function init() {
                 }]
             }
         });
+
+
+
 
         new Chart(doughnutChartEl, {
             type: 'doughnut',
@@ -47,18 +53,6 @@ async function init() {
                     data: topSixProgram.map(program => program.applicantsTotal),
                     borderWidth: 2,
                     hoverOffset: 4
-                }]
-            }
-        });
-
-        new Chart(doughnutChartEl, {
-            type: 'bar',
-            data: {
-                labels: topSixProgram.map(program => program.name),
-                datasets: [{
-                    label: '# of Applicants',
-                    data: topSixProgram.map(program => program.applicantsTotal),
-                    borderWidth: 1
                 }]
             }
         });
