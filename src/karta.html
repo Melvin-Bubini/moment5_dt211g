@@ -49,13 +49,22 @@
     </header>
 
     <main>
-        
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Sök efter plats">
+            <button id="mapSubmit" type="submit">Sök</button>
+          </form>
 
+        <div id="map">
+            <iframe id="mapFrame"></iframe>
+        </div>
+
+        <div id="error"></div>
     </main>
 
     <footer>
         <p>@Melvin Bubini, 2024</p>
     </footer>
+    <script type="module" src="js/map.js"></script>
     <script type="module" src="js/main.js"></script>
 </body>
 
